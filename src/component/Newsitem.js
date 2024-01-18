@@ -26,7 +26,7 @@ export default class Newsitem extends Component {
     this.setState({
       loading: true,
     });
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=f70d43087bb6457b826998b5701188f6&page=1&pagesize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=1&pagesize=${this.props.pageSize}`;
     let data = await fetch(url);
     let parseData = await data.json();
     console.log(parseData);
@@ -42,9 +42,9 @@ export default class Newsitem extends Component {
     });
     let url = `https://newsapi.org/v2/top-headlines?country=${
       this.props.country
-    }&apiKey=f70d43087bb6457b826998b5701188f6&page=${
-      this.state.page + 1
-    }&pagesize=${this.props.pageSize}`;
+    }&apiKey=${this.props.apiKey}&page=${this.state.page + 1}&pagesize=${
+      this.props.pageSize
+    }`;
     let data = await fetch(url);
     let parseData = await data.json();
     console.log(parseData);
@@ -61,9 +61,9 @@ export default class Newsitem extends Component {
     });
     let url = `https://newsapi.org/v2/top-headlines?country=${
       this.props.country
-    }&apiKey=f70d43087bb6457b826998b5701188f6&page=${
-      this.state.page - 1
-    } pagesize=${this.props.pageSize}`;
+    }&apiKey=${this.props.apiKey}&page=${this.state.page - 1} pagesize=${
+      this.props.pageSize
+    }`;
     let data = await fetch(url);
     let parseData = await data.json();
     console.log(parseData);

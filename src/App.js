@@ -4,6 +4,8 @@ import Nav from "./component/Nav";
 import "./App.css";
 import Newsitem from "./component/Newsitem";
 export default class App extends Component {
+  apikey = process.env.REACT_NEWS_API_KEY;
+
   render() {
     return (
       <>
@@ -17,6 +19,7 @@ export default class App extends Component {
                   key={"Home"}
                   pageSize="12"
                   country="in"
+                  apiKey={this.apikey}
                   category="general"
                 />
               }
@@ -27,6 +30,7 @@ export default class App extends Component {
                 <Newsitem
                   key={"Game"}
                   pageSize="12"
+                  apiKey={this.apikey}
                   country="in"
                   category="game"
                 />
@@ -38,6 +42,7 @@ export default class App extends Component {
                 <Newsitem
                   key={"Science"}
                   pageSize="12"
+                  apiKey={this.apikey}
                   country="in"
                   category="science"
                 />
@@ -48,6 +53,7 @@ export default class App extends Component {
               element={
                 <Newsitem
                   pageSize="12"
+                  apiKey={this.apikey}
                   key={"Technology"}
                   country="in"
                   category="technology"
