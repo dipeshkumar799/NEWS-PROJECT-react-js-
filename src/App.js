@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Nav />
-      <Newsitem />
+      <Newsitem pageSize="12" country="us" />
     </>
   );
 }
