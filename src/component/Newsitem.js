@@ -5,9 +5,13 @@ import PropTypes from "prop-types";
 export default class Newsitem extends Component {
   static defaultProps = {
     country: "in",
+    pageSize: 12,
+    category: "general",
   };
   static propsTypes = {
     county: PropTypes.string,
+    pageSize: PropTypes.number,
+    category: PropTypes.string,
   };
   constructor() {
     super();
@@ -22,7 +26,7 @@ export default class Newsitem extends Component {
     this.setState({
       loading: true,
     });
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=f70d43087bb6457b826998b5701188f6&page=1&pagesize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=f70d43087bb6457b826998b5701188f6&page=1&pagesize=${this.props.pageSize}`;
     let data = await fetch(url);
     let parseData = await data.json();
     console.log(parseData);
@@ -31,7 +35,6 @@ export default class Newsitem extends Component {
       loading: false,
     });
   }
-
   handleNextClick = async () => {
     console.log("you have clicked on next");
     this.setState({
@@ -51,7 +54,6 @@ export default class Newsitem extends Component {
       articles: parseData.articles,
     });
   };
-
   handlePrevClick = async () => {
     console.log("you have clicked on prev");
     this.setState({
