@@ -82,6 +82,7 @@ export default class Newsitem extends Component {
             <button
               type="button"
               onClick={this.handleNextClick}
+              disabled={this.state.page >= this.state.articles}
               className="btn btn-dark"
             >
               Next &rarr;
