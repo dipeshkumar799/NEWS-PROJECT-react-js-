@@ -4,7 +4,7 @@ import Nav from "./component/Nav";
 import "./App.css";
 import Newsitem from "./component/Newsitem";
 export default class App extends Component {
-  apikey = process.env.REACT_NEWS_API_KEY;
+  apikey = "f70d43087bb6457b826998b5701188f6";
 
   render() {
     return (

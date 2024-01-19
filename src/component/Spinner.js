@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Spinner() {
+const Spinner = () => {
   return (
     <div>
       <div className="spinner-border" role="status">
@@ -8,4 +8,5 @@ export default function Spinner() {
       </div>
     </div>
   );
-}
+};
+export default Spinner;
